@@ -54,6 +54,10 @@ elif sw  == "timer":
 
             def sch():
                 requests.get('http://192.168.4.1/on')
+                sleep(5)
+                requests.get('http://192.168.4.1/off')
+                sleep(5)
+                requests.get('http://192.168.4.1/on')
                 print("Done !")
                 
             schedule.every().day.at(clk).do(sch)
